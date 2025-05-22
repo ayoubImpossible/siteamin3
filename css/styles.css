@@ -109,20 +109,20 @@
      * color-2(#eb5e55)
      * color-3(#f2d0a4)
      */
-    --color-1: hsla(345, 93%, 44%, 1);
-    --color-2: hsla(4, 79%, 63%, 1);
-    --color-3: hsla(34, 75%, 80%, 1);
+    --color-1: rgb(7, 7, 7);
+    --color-2: rgb(255, 224, 49);
+    --color-3: rgb(22, 128, 248);
 
     /* theme color variations
      */
-    --color-1-lighter: hsla(345, 93%, 64%, 1);
-    --color-1-light  : hsla(345, 93%, 54%, 1);
-    --color-1-dark   : hsla(345, 93%, 34%, 1);
-    --color-1-darker : hsla(345, 93%, 24%, 1);
-    --color-2-lighter: hsla(4, 79%, 83%, 1);
-    --color-2-light  : hsla(4, 79%, 73%, 1);
-    --color-2-dark   : hsla(4, 79%, 53%, 1);
-    --color-2-darker : hsla(4, 79%, 43%, 1);
+    --color-1-lighter: rgb(255, 255, 255);
+    --color-1-light  : rgb(226, 226, 226);
+    --color-1-dark   : rgb(146, 146, 144);
+    --color-1-darker : rgb(66, 66, 65);
+    --color-2-lighter: rgb(239, 246, 177);
+    --color-2-light  : rgb(241, 239, 132);
+    --color-2-dark   : rgb(230, 211, 40);
+    --color-2-darker : rgb(196, 185, 23);
 
     /* feedback colors
      * color-error(#ffd1d2), color-success(#c8e675), 
@@ -169,13 +169,13 @@
     --color-text       : var(--color-gray-10);
     --color-text-dark  : var(--color-white);
     --color-text-light : var(--color-gray-12);
-    --color-placeholder: var(--color-gray-11);
+    --color-placeholder: var(--color-gray-10);
 
     /* buttons
      */
     --color-btn                   : var(--color-gray-15);
     --color-btn-text              : var(--color-white);
-    --color-btn-hover             : var(--color-white);
+    --color-btn-hover             : var(--color-2);
     --color-btn-hover-text        : var(--color-black);
     --color-btn-primary           : var(--color-1);
     --color-btn-primary-text      : var(--color-white);
@@ -1900,7 +1900,7 @@ ul.disc li::before {
     width: var(--vspace-0_25);
     height: var(--vspace-0_25);
     border-radius: 50%;
-    background: var(--color-1-dark);
+    background: var(--color-1-light);
     position: absolute;
     left: -.9em;
     top: .65em;
@@ -3133,8 +3133,8 @@ input::-moz-focus-inner {
 }
 
 .s-header__logo img {
-    width: 68px;
-    height: 10px;
+    width: 100px;
+    height: 80px;
     margin-bottom: 0;
 }
 
@@ -4087,7 +4087,7 @@ html.no-csstransitions .s-hero__content {
     font-weight: 600;
     text-align: center;
     color: white;
-    background-color: var(--color-1);
+    background-color: rgb(185, 47, 47);
     height: var(--vspace-1_5);
     width: var(--vspace-1_5);
     line-height: var(--vspace-1_5);
@@ -4700,7 +4700,7 @@ html.no-csstransitions .s-hero__content {
 }
 
 .s-contact__top .h6 {
-    color: black;
+    color: rgb(175, 174, 174);
     margin-top: 0;
     margin-bottom: var(--vspace-1);
 }
@@ -4970,7 +4970,7 @@ html.no-csstransitions .s-hero__content {
     position: relative;
     width: 100%;
     height: 500px;
-    margin-top: 100px;
+    margin-top: 99px;
     overflow: hidden;
 }
 
@@ -5010,3 +5010,4 @@ html.no-csstransitions .s-hero__content {
     background-color: rgba(0, 0, 0, 0.3); /* change 0.5 for more/less darkness */
     z-index: 1;
 }
+
