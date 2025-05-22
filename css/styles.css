@@ -3005,7 +3005,7 @@ input::-moz-focus-inner {
 
 .slick-slider .slick-dots li.slick-active button, 
 .slick-slider .slick-dots li:hover button {
-    background: var(--color-1);
+    background: rgb(227, 90, 4);
 }
 
 
@@ -4054,7 +4054,7 @@ html.no-csstransitions .s-hero__content {
 }
 
 .s-about__photo {
-    background-image: url(../images/about-photo.jpg);
+    background-image: url(../images/img_propos.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -4494,7 +4494,7 @@ html.no-csstransitions .s-hero__content {
 
 .clients__slide {
     display: block;
-    opacity: .15;
+    opacity: 0.6;
     padding: 0;
     -webkit-transition: opacity .5s;
     transition: opacity .5s;
