@@ -5014,25 +5014,31 @@ html.no-csstransitions .s-hero__content {
 }
 
 .video-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    padding: 0 20px;    z-index: 2;
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  width: 80%; /* Set width to 80% of parent */
 }
 
 .video-title {
-    font-size: 50px;
-    font-weight: bold;
-    margin: 0;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0 auto; /* Center horizontally */
+  opacity: 0.8; /* 80% opacity */
+  width: fit-content; /* Only take needed width */
 }
 
 .video-subtitle {
-    font-size: 26px;
-    margin-top: 1rem;
+  font-size: 26px;
+  margin-top: 1rem;
+  opacity: 0.8; /* 80% opacity */
+  width: fit-content; /* Only take needed width */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto;
 }
 .video-overlay-dark {
     position: absolute;
