@@ -146,21 +146,40 @@
 
 <section class="video-header">
   <div class="video-slider">
-    <video class="slider-video" autoplay muted playsinline>
-      <source src="images/WhatsApp Video 2025-05-24 at 15.40.58.mp4" type="video/mp4">
-    </video>
-    <video class="slider-video" muted playsinline>
-      <source src="images/WhatsApp Video 2025-05-24 at 15.11.43.mp4" type="video/mp4">
-    </video>
-    <video class="slider-video" muted playsinline>
-      <source src="images/WhatsApp Video 2025-05-24 at 16.50.02.mp4" type="video/mp4">
-    </video>
+    <!-- Video 1 with its own title/subtitle -->
+    <div class="video-slide">
+      <video class="slider-video" autoplay muted playsinline>
+        <source src="images/WhatsApp Video 2025-05-24 at 15.40.58.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay">
+        <h1 class="video-title">Color</h1>
+        <p class="video-subtitle">La couleur au service de la création numérique</p>
+      </div>
+    </div>
+    
+    <!-- Video 2 with its own title/subtitle -->
+    <div class="video-slide">
+      <video class="slider-video" muted playsinline>
+        <source src="images/WhatsApp Video 2025-05-24 at 15.11.43.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay">
+        <h1 class="video-title">Print</h1>
+        <p class="video-subtitle">L’impression numérique, la technologie au service de l’innovation</p>
+      </div>
+    </div>
+    
+    <!-- Video 3 with its own title/subtitle -->
+    <div class="video-slide">
+      <video class="slider-video" muted playsinline>
+        <source src="images/WhatsApp Video 2025-05-24 at 16.50.02.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay">
+        <h1 class="video-title">Graphic Design</h1>
+        <p class="video-subtitle">Créativité numérique, clarté visuelle</p>
+      </div>
+    </div>
   </div>
   <div class="video-overlay-dark"></div>
-  <div class="video-overlay">
-    <h1 class="video-title">Couleurs</h1>
-    <p class="video-subtitle">La couleur au service de la création numérique</p>
-  </div>
 </section>
 
 
@@ -778,7 +797,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const videos = document.querySelectorAll(".slider-video");
+    const videoSlides = document.querySelectorAll(".video-slide");
     const videoSlider = document.querySelector(".video-slider");
     let current = 0;
 
@@ -787,8 +806,9 @@ document.addEventListener("DOMContentLoaded", function () {
         videoSlider.classList.add("transitioning");
         
         // Hide current video
-        videos.forEach(video => {
-            video.classList.remove("active");
+        videoSlides.forEach(slide => {
+            slide.classList.remove("active");
+            const video = slide.querySelector(".slider-video");
             video.pause();
         });
 
@@ -797,24 +817,23 @@ document.addEventListener("DOMContentLoaded", function () {
             videoSlider.classList.remove("transitioning");
             
             // Show next video
-            current = (current + 1) % videos.length;
-            const nextVideo = videos[current];
+            current = (current + 1) % videoSlides.length;
+            const nextSlide = videoSlides[current];
+            nextSlide.classList.add("active");
+            const nextVideo = nextSlide.querySelector(".slider-video");
             nextVideo.currentTime = 0;
-            nextVideo.classList.add("active");
             nextVideo.play();
             
         }, 1000); // 1 second black screen
     }
 
     // Initialize first video
-    videos[current].classList.add("active");
-    videos[current].play();
+    videoSlides[current].classList.add("active");
+    videoSlides[current].querySelector(".slider-video").play();
     
     // Start the rotation (every 4 seconds: 3s video + 1s black)
     setInterval(showNextVideo, 4000);
 });
-
-
 
   document.addEventListener("DOMContentLoaded", function () {
   const counters = document.querySelectorAll('.stat-count');
