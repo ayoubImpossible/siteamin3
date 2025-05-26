@@ -5130,7 +5130,7 @@ html.no-csstransitions .s-hero__content {
   max-width: 250px;
   margin: 1rem;
   padding: 4rem;
-  background-color: #222324;
+  background-color: #ca1863;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   border-radius: 0;
   transition: transform 0.3s ease;
@@ -5142,8 +5142,8 @@ html.no-csstransitions .s-hero__content {
 }
 
 .stat-count {
-  font-size: 5rem;
-  color: #686e70;
+  font-size: 7rem;
+  color: #ffffff;
   font-weight: bold;
 }
 

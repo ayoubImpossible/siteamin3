@@ -147,7 +147,28 @@
 <section class="video-header">
   <div class="video-slider">
     <!-- Video 1 with its own title/subtitle -->
+   
+    
+    <!-- Video 2 with its own title/subtitle -->
     <div class="video-slide">
+      <video class="slider-video" muted playsinline>
+        <source src="images/video1.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay">
+        <h1 class="video-title">Color</h1>
+        <p class="video-subtitle">La couleur au service de la création numérique</p>
+      </div>
+    </div>
+    <div class="video-slide">
+      <video class="slider-video" muted playsinline>
+        <source src="images/video2.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay">
+        <h1 class="video-title">Sport Event</h1>
+        <p class="video-subtitle">2600m2/jour avec une mobilité à l’international</p>
+      </div>
+    </div>
+     <div class="video-slide">
       <video class="slider-video" autoplay muted playsinline>
         <source src="images/WhatsApp Video 2025-05-24 at 15.40.58.mp4" type="video/mp4">
       </video>
@@ -156,22 +177,10 @@
         <p class="video-subtitle">L’impression numérique, la technologie au service de l’innovation  </p>
       </div>
     </div>
-    
-    <!-- Video 2 with its own title/subtitle -->
-    <div class="video-slide">
-      <video class="slider-video" muted playsinline>
-        <source src="images/WhatsApp Video 2025-05-24 at 15.11.43.mp4" type="video/mp4">
-      </video>
-      <div class="video-overlay">
-        <h1 class="video-title">Color</h1>
-        <p class="video-subtitle">La couleur au service de la création numérique</p>
-      </div>
-    </div>
-    
     <!-- Video 3 with its own title/subtitle -->
     <div class="video-slide">
       <video class="slider-video" muted playsinline>
-        <source src="images/WhatsApp Video 2025-05-24 at 16.50.02.mp4" type="video/mp4">
+        <source src="images/video3.mp4" type="video/mp4">
       </video>
       <div class="video-overlay">
         <h1 class="video-title">Graphic Design</h1>
@@ -801,39 +810,39 @@ document.addEventListener("DOMContentLoaded", function () {
     const videoSlider = document.querySelector(".video-slider");
     let current = 0;
 
-    function showNextVideo() {
-        // Start transition to black
-        videoSlider.classList.add("transitioning");
-        
-        // Hide current video
-        videoSlides.forEach(slide => {
+    function playVideo(index) {
+        // Hide all videos
+        videoSlides.forEach((slide, i) => {
             slide.classList.remove("active");
             const video = slide.querySelector(".slider-video");
             video.pause();
+            video.currentTime = 0;
         });
 
-        // After 1 second, show next video
-        setTimeout(() => {
-            videoSlider.classList.remove("transitioning");
-            
-            // Show next video
-            current = (current + 1) % videoSlides.length;
-            const nextSlide = videoSlides[current];
-            nextSlide.classList.add("active");
-            const nextVideo = nextSlide.querySelector(".slider-video");
-            nextVideo.currentTime = 0;
-            nextVideo.play();
-            
-        }, 1000); // 1 second black screen
+        // Show and play current video
+        const currentSlide = videoSlides[index];
+        currentSlide.classList.add("active");
+        const currentVideo = currentSlide.querySelector(".slider-video");
+        currentVideo.play();
+
+        // When the video ends, transition and play the next one
+        currentVideo.onended = () => {
+            videoSlider.classList.add("transitioning");
+
+            setTimeout(() => {
+                videoSlider.classList.remove("transitioning");
+
+                current = (index + 1) % videoSlides.length;
+                playVideo(current);
+
+            }, 500); // transition delay (e.g. black screen)
+        };
     }
 
-    // Initialize first video
-    videoSlides[current].classList.add("active");
-    videoSlides[current].querySelector(".slider-video").play();
-    
-    // Start the rotation (every 4 seconds: 3s video + 1s black)
-    setInterval(showNextVideo, 4000);
+    // Start with the first video
+    playVideo(current);
 });
+
 
   document.addEventListener("DOMContentLoaded", function () {
   const counters = document.querySelectorAll('.stat-count');
