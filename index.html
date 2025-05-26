@@ -153,7 +153,7 @@
       <source src="images/WhatsApp Video 2025-05-24 at 15.11.43.mp4" type="video/mp4">
     </video>
     <video class="slider-video" muted playsinline>
-      <source src="images/WhatsApp Video 2025-05-24 at 15.40.58.mp4" type="video/mp4">
+      <source src="images/WhatsApp Video 2025-05-24 at 16.50.02.mp4" type="video/mp4">
     </video>
   </div>
   <div class="video-overlay-dark"></div>
@@ -195,7 +195,26 @@ Notre entreprise d’impression grand format se distingue par sa capacité à r�
                 <div class="s-about__photo" data-aos="fade-up"></div>
             </div>
         </div>
-
+  <section class="s-stats">
+  <div class="row stats-content">
+    <div class="column large-3 medium-6 tab-full stat-item">
+      <div class="stat-count" data-count="19">0</div>
+      <h5>Années d'expérience</h5>
+    </div>
+    <div class="column large-3 medium-6 tab-full stat-item">
+      <div class="stat-count" data-count="500">0</div>
+      <h5>Projets réalisés</h5>
+    </div>
+    <div class="column large-3 medium-6 tab-full stat-item">
+      <div class="stat-count" data-count="300">0</div>
+      <h5>Clients satisfaits</h5>
+    </div>
+    <div class="column large-3 medium-6 tab-full stat-item">
+      <div class="stat-count" data-count="15">0</div>
+      <h5>Collaborateurs</h5>
+    </div>
+  </div>
+</section>
         <div class="row block-large-1-2 block-tab-full s-about__process item-list">
             <div class="column item item-process" data-aos="fade-up">
                 <h3 class="item-title" id="h_1">Experience</h3>
@@ -442,26 +461,7 @@ Nous combinons créativité, technicité et respect des délais pour vous propos
 
     <!-- clients
     ================================================== -->
-    <section class="s-stats">
-  <div class="row stats-content">
-    <div class="column large-3 medium-6 tab-full stat-item">
-      <div class="stat-count" data-count="19">0</div>
-      <h5>Années d'expérience</h5>
-    </div>
-    <div class="column large-3 medium-6 tab-full stat-item">
-      <div class="stat-count" data-count="500">0</div>
-      <h5>Projets réalisés</h5>
-    </div>
-    <div class="column large-3 medium-6 tab-full stat-item">
-      <div class="stat-count" data-count="300">0</div>
-      <h5>Clients satisfaits</h5>
-    </div>
-    <div class="column large-3 medium-6 tab-full stat-item">
-      <div class="stat-count" data-count="15">0</div>
-      <h5>Collaborateurs</h5>
-    </div>
-  </div>
-</section>
+  
 
     <div id="clients" class="section s-clients">
 
@@ -602,9 +602,11 @@ Nous combinons créativité, technicité et respect des délais pour vous propos
                         <h4 style="color: rgb(134, 134, 134);" class="h6">Where to Find Us</h4>
         
                         <p>
-                        Rabat <br>
-                         Vision Numéric <br>direction@visionumeric.ma<br>
-                        <a href="tel:197-543-2345">06.61.29.61.54</a>
+                        quartier Takadoum, z.i. n°43
+
+ <br>
+                        10200 Rabat <br>direction@visionumeric.ma<br>
+                        <a href="tel:197-543-2345">05.37.65.87.31</a>
                         </p>
                     </div>
         
@@ -775,28 +777,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const videos = document.querySelectorAll(".slider-video");
+    const videoSlider = document.querySelector(".video-slider");
     let current = 0;
 
     function showNextVideo() {
-      videos.forEach((video, index) => {
-        video.pause();
-        video.classList.remove("active");
-        if (index === current) {
-          video.currentTime = 0;
-          video.classList.add("active");
-          video.play();
-        }
-      });
+        // Start transition to black
+        videoSlider.classList.add("transitioning");
+        
+        // Hide current video
+        videos.forEach(video => {
+            video.classList.remove("active");
+            video.pause();
+        });
 
-      current = (current + 1) % videos.length;
+        // After 1 second, show next video
+        setTimeout(() => {
+            videoSlider.classList.remove("transitioning");
+            
+            // Show next video
+            current = (current + 1) % videos.length;
+            const nextVideo = videos[current];
+            nextVideo.currentTime = 0;
+            nextVideo.classList.add("active");
+            nextVideo.play();
+            
+        }, 1000); // 1 second black screen
     }
 
-    // Démarrer le carrousel
-    showNextVideo(); // Afficher le premier
-    setInterval(showNextVideo, 3000); // changer toutes les 3s
-  });
+    // Initialize first video
+    videos[current].classList.add("active");
+    videos[current].play();
+    
+    // Start the rotation (every 4 seconds: 3s video + 1s black)
+    setInterval(showNextVideo, 4000);
+});
 
 
 
