@@ -4054,7 +4054,7 @@ html.no-csstransitions .s-hero__content {
 }
 
 .s-about__photo {
-    background-image: url(../images/img_propos.png);
+    background-image: url(../images/about-photo.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -4078,7 +4078,17 @@ html.no-csstransitions .s-hero__content {
     position: relative;
 }
 
-.s-about__process h3::before {
+
+
+
+
+
+
+
+
+
+
+.s-about__process .item-title::before {
     content: counter(ctr);
     counter-increment: ctr;
     display: block;
@@ -4087,7 +4097,6 @@ html.no-csstransitions .s-hero__content {
     font-weight: 600;
     text-align: center;
     color: white;
-    background-color: rgb(185, 47, 47);
     height: var(--vspace-1_5);
     width: var(--vspace-1_5);
     line-height: var(--vspace-1_5);
@@ -4096,6 +4105,30 @@ html.no-csstransitions .s-hero__content {
     left: 0;
     top: -5px;
 }
+/* ID h_1 (Experience) */
+#h_1::before {
+    background-color: rgb(229, 233, 11); /* bleu */
+}
+
+/* ID h_2 (Equipe) */
+#h_2::before {
+    background-color: rgb(88, 168, 233); /* rose */
+}
+
+/* ID h_3 (Flexibilité) */
+#h_3::before {
+    background-color: rgb(209, 72, 72); /* orange */
+}
+
+/* ID h_4 (Professionnalisme) */
+#h_4::before {
+    background-color: rgb(59, 224, 133); /* vert */
+}
+
+
+
+
+
 
 .s-about__process .item-process {
     position: relative;
@@ -5009,5 +5042,59 @@ html.no-csstransitions .s-hero__content {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3); /* change 0.5 for more/less darkness */
     z-index: 1;
+}
+
+.slider-video {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slider-video.active {
+  display: block;
+  z-index: -1;
+
+
+
+  
+}
+
+.stats-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.s-stats {
+  background-color: transparent;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.stat-item {
+  flex: 1 1 200px; /* Largeur minimum + responsive */
+  max-width: 250px;
+  margin: 1rem;
+  padding: 2rem;
+  background-color: #222324;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  transition: transform 0.3s ease;
+}
+
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-count {
+  font-size: 3rem;
+  color: #01aef0;
+  font-weight: bold;
 }
 
