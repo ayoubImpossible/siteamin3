@@ -29,6 +29,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <style>
    .clients__slide img {
     filter: brightness(0) invert(1); /* turns black to white */
@@ -202,7 +205,7 @@
             <div class="column large-12">
 
                 <div class="section-title" data-num="01" data-aos="fade-up">
-                    <h3 style="color: rgb(134, 134, 134);" class="h6"> Qui sommes nous</h3>
+                    <h3 style="color: rgb(182, 180, 180);" class="h6"> Qui sommes nous</h3>
                 </div>
 
             </div>
@@ -287,17 +290,7 @@ Nous plaçons la satisfaction client au centre de nos priorités, en respectant 
                     <h3 style="color: rgb(134, 134, 134);" class="h6"> Expertise</h3>
                 </div>
             </div>
-            <div class="column large-6 w-900-stack">
-                <h1 class="display-1" data-aos="fade-up">
-                    Imprimeur Grand Format Spécialiste en Solutions d’Impression sur Mesure
-
-                </h1>
-            </div>
-            <div class="column large-6 w-900-stack">
-                <p class="lead" data-aos="fade-up">
-                Notre entreprise d’impression grand format se distingue par sa capacité à réaliser des supports visuels de haute qualité, adaptés à tous vos projets événementiels, commerciaux et de communication visuelle. Grâce à notre expertise de plus de 19ans, notre équipement de pointe, nous vous accompagnons dans la concrétisation de vos idées avec des solutions innovantes et percutantes.
-                </p>
-            </div>
+    
         </div>
 
         <div class="row block-large-1-2 block-tab-full s-services__services item-list">
@@ -501,6 +494,7 @@ Nous combinons créativité, technicité et respect des délais pour vous propos
             </div>
         </div> <!-- s-clients__top -->
 
+
         <div class="row clients-outer">
             <div class="column">
                 <div class="clients" data-aos="fade-up">
@@ -596,28 +590,7 @@ Nous combinons créativité, technicité et respect des délais pour vous propos
 
     <!-- contact
     ================================================== -->
-    <section class="s-contact">
-
-        <div class="row narrower s-contact__top h-text-center">
-            <div class="column">
-                <h3  class="h6">A propos</h3>
-                <h1 class="display-1">
-                              Vision Numeric, société d’impression grand format en activité depuis 15 ans, intégrée verticalement dans ses processus de production, met en avant le savoir être de ses collaborateurs avant ses compétences techniques. 
-
-                </h1>
-            </div>
-        </div> <!-- s-footer__top -->
-
-        <div class="row h-text-center">
-            <div class="column">
-                <p class="s-contact__email">
-                    <a href="mailto:#0">hello@flare.com</a>
-                </p>
-            </div>
-        </div>
-
-    </section>  <!-- end s-contact -->
-
+  
 
     <!-- footer
     ================================================== -->
@@ -846,7 +819,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener("DOMContentLoaded", function () {
   const counters = document.querySelectorAll('.stat-count');
-  const speed = 1000; // ✅ plus grand = plus lent (ex : 1000 au lieu de 200)
+  const speed = 180; // ✅ plus grand = plus lent (ex : 1000 au lieu de 200)
 
   const animateCounters = () => {
     counters.forEach(counter => {
@@ -879,6 +852,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   observer.observe(document.querySelector('.s-stats'));
 });
+
+
+
 
 </script>
 </body>

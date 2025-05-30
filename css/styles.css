@@ -2911,7 +2911,7 @@ input::-moz-focus-inner {
     line-height: 1;
     letter-spacing: -0.02em;
     color: var(--color-text);
-    opacity: .1;
+    opacity: .5;
 }
 
 .section-title h3 {
@@ -4009,7 +4009,7 @@ html.no-csstransitions .s-hero__content {
  * ------------------------------------------------------------------- */
 .s-about {
     background-color: var(--color-bg);
-    padding-top: calc(7 * var(--space));
+    padding-top: calc(4 * var(--space));
     padding-bottom: 0;
     position: relative;
 }
@@ -4102,27 +4102,9 @@ html.no-csstransitions .s-hero__content {
     line-height: var(--vspace-1_5);
     border-radius: 50%;
     position: absolute;
+    background-color: #4c5158;
     left: 0;
     top: -5px;
-}
-/* ID h_1 (Experience) */
-#h_1::before {
-    background-color: rgb(229, 233, 11); /* bleu */
-}
-
-/* ID h_2 (Equipe) */
-#h_2::before {
-    background-color: rgb(88, 168, 233); /* rose */
-}
-
-/* ID h_3 (Flexibilité) */
-#h_3::before {
-    background-color: rgb(209, 72, 72); /* orange */
-}
-
-/* ID h_4 (Professionnalisme) */
-#h_4::before {
-    background-color: rgb(59, 224, 133); /* vert */
 }
 
 
@@ -4200,7 +4182,7 @@ html.no-csstransitions .s-hero__content {
  * ------------------------------------------------------------------- */
 .s-services {
     background-color: var(--color-bg);
-    padding-top: calc(6 * var(--space));
+    padding-top: calc(4 * var(--space));
     padding-bottom: var(--vspace-2);
 }
 
@@ -4270,7 +4252,7 @@ html.no-csstransitions .s-hero__content {
  * ------------------------------------------------------------------- */
 .s-portfolio {
     background-color: var(--color-bg);
-    padding-top: calc(7 * var(--space));
+    padding-top: 0px;
     padding-bottom: 0;
 }
 
@@ -5084,7 +5066,7 @@ html.no-csstransitions .s-hero__content {
 
 .video-overlay {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -5147,3 +5129,117 @@ html.no-csstransitions .s-hero__content {
   font-weight: bold;
 }
 
+.clients-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.clients-track {
+    display: flex;
+    gap: 50px; /* Adjust spacing between logos */
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+.clients__slide {
+    flex: 0 0 auto;
+    width: 150px; /* Adjust logo width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clients__slide img {
+    max-width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.clients__slide:hover img {
+    opacity: 1;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Move by half the width */
+    }
+}
+
+
+.clients-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+}
+
+.clients-track {
+    display: flex;
+    gap: 50px;
+    width: max-content;
+    animation: scrollLeft 30s linear infinite;
+}
+
+.clients-track[data-direction="right-to-left"] {
+    animation: scrollRight 30s linear infinite;
+}
+
+.clients__slide {
+    flex: 0 0 auto;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clients__slide img {
+    max-width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.clients__slide:hover img {
+    opacity: 1;
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Manual scrolling classes */
+.clients-track.manual-scroll {
+    animation: none;
+    cursor: grab;
+}
+
+.clients-track.manual-scroll.grabbing {
+    cursor: grabbing;
+}
+
+
+
+.clients-slider img {
+  width: 100px;
+  height: auto;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.clients-slider img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
