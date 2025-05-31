@@ -2911,10 +2911,11 @@ input::-moz-focus-inner {
     line-height: 1;
     letter-spacing: -0.02em;
     opacity: .5;
+    color: #6c737d;
 }
 
 
-
+/*
 .section-title[data-num="01"]::before {
     color: #df0168;
 }
@@ -2926,7 +2927,7 @@ input::-moz-focus-inner {
 .section-title[data-num="03"]::before {
     color: #f30852;
 }
-
+*/
 .section-title h3 {
     z-index: 2;
     font-weight: 500;
@@ -5125,7 +5126,7 @@ html.no-csstransitions .s-hero__content {
   max-width: 250px;
   margin: 1rem;
   padding: 4rem;
-  background-color: #fc046b;
+  background-color: #3a393a;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   transition: transform 0.3s ease;
