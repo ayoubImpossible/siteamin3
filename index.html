@@ -32,12 +32,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<style>
-   .clients__slide img {
-    filter: brightness(0) invert(1); /* turns black to white */
-    opacity: 0.8; /* 80% opacity */
-  }
-</style>
+
+
 </head>
 
 <body id="top">
@@ -75,7 +71,7 @@
                 </ul>
             </nav> <!-- end s-header__nav-wrap -->
 
-            <a href="mailto:#0" class="btn btn--primary btn--small">
+            <a href="mailto:#0" class="btn btn--primary btn--small" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
                 Get In Touch
             </a>
@@ -205,7 +201,7 @@
             <div class="column large-12">
 
                 <div class="section-title" data-num="01" data-aos="fade-up">
-                    <h3 style="color: rgb(182, 180, 180);" class="h6"> Qui sommes nous</h3>
+                    <h3 style="color: rgb(182, 180, 180);"   data-num="01" class="h6"> Qui sommes nous</h3>
                 </div>
 
             </div>
@@ -226,7 +222,7 @@ Notre entreprise d’impression grand format se distingue par sa capacité à r�
                 <div class="s-about__photo" data-aos="fade-up"></div>
             </div>
         </div>
-  <section class="s-stats">
+  <section class="s-stats" style="margin-top: 50px;padding-top: 70px;padding-bottom: 50px;">
   <div class="row stats-content">
     <div class="column large-3 medium-6 tab-full stat-item">
       <div class="stat-count" data-count="19">0</div>
@@ -284,16 +280,15 @@ Nous plaçons la satisfaction client au centre de nos priorités, en respectant 
     ================================================== -->
     <section id="services" class="s-services">
 
-        <div class="row">
-            <div class="column large-12">
+        <div class="row" style="height: 170px;">
                 <div class="section-title" data-num="02" data-aos="fade-up">
-                    <h3 style="color: rgb(134, 134, 134);" class="h6"> Expertise</h3>
+                    <h3 style="color: rgb(134, 134, 134);" data-num="02" class="h6"> Expertise</h3>
                 </div>
-            </div>
+            
     
         </div>
 
-        <div class="row block-large-1-2 block-tab-full s-services__services item-list">
+        <div class="row block-large-1-2 block-tab-full s-services__services item-list" >
             <div class="column item item-service" data-aos="fade-up">
                 <span class="service-icon service-icon--product-design"></span>
                 <h3 class="item-title">Impression numérique GF</h3>
@@ -352,7 +347,7 @@ Nous combinons créativité, technicité et respect des délais pour vous propos
         <div class="row s-porfolio__top">
             <div class="column large-6 w-900-stack">
                 <div class="section-title" data-num="03" data-aos="fade-up">
-                    <h3 style="color: rgb(134, 134, 134);" class="h6">Projets</h3>
+                    <h3 style="color: rgb(134, 134, 134);" data-num="03"  class="h6">Projets</h3>
                 </div>
             </div>
             <div class="column large-6 w-900-stack">
@@ -482,7 +477,7 @@ Nous combinons créativité, technicité et respect des délais pour vous propos
 
     <!-- clients
     ================================================== -->
-  
+
 
     <div id="clients" class="section s-clients">
 
@@ -856,6 +851,243 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+</script>
+<!-- Add this right before the closing </body> tag -->
+
+
+<div id="contact-popup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h4>Contactez-nous</h4>
+            <span class="close-btn">&times;</span>
+        </div>
+        <form id="contact-form" class="contact-form">
+<div class="form-group">
+                <input type="text" id="nom" name="nom" required placeholder="Nom">
+            </div>
+            <div class="form-group">
+                <input type="text" id="prenom" name="prenom" required placeholder="Prénom">
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input type="tel" id="telephone" name="telephone" required placeholder="Téléphone">
+            </div>
+            <div class="form-group">
+                <input type="text" id="adresse" name="adresse" required placeholder="Adresse">
+            </div>
+            <div class="form-group">
+                <input type="text" id="ville" name="ville" required placeholder="Ville">
+            </div>
+            <div class="form-group">
+                <select id="objet" name="objet" required>
+                    <option value="" disabled selected>Sélectionnez un objet</option>
+                    <option value="Devis">Demande de devis</option>
+                    <option value="Information">Demande d'information</option>
+                    <option value="Support">Support technique</option>
+                    <option value="Autre">Autre demande</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <textarea id="demande" name="demande" required placeholder="Votre demande"></textarea>
+            </div>
+           
+            <!-- ... other form fields ... -->
+            <button type="submit" class="btn btn--primary">Envoyer</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<style>
+/* Popup Styles */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.popup-content {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 94vh; /* 90% of viewport height */
+    position: relative;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Contain the scrolling */
+}
+
+.popup-header {
+    padding-bottom: 20px;
+    position: relative;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.close-btn:hover {
+    color: #7e7e7e;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto; /* Make form scrollable */
+    flex-grow: 1; /* Take remaining space */
+    padding-right: 5px; /* Prevent content from touching scrollbar */
+    margin-right: -5px; /* Compensate for padding */
+}
+
+/* Custom scrollbar for the form */
+.contact-form::-webkit-scrollbar {
+    width: 8px;
+}
+
+.contact-form::-webkit-scrollbar-track {
+    background: #2a2a2a;
+    border-radius: 4px;
+}
+
+.contact-form::-webkit-scrollbar-thumb {
+    background: #707070;
+    border-radius: 4px;
+}
+
+.contact-form::-webkit-scrollbar-thumb:hover {
+    background: #848484;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; /* Prevent form fields from shrinking */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+.btn--primary {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    flex-shrink: 0; /* Keep button at bottom */
+}
+
+.btn--primary:hover {
+    background-color: #cc0000;
+}
+
+@media (max-width: 600px) {
+    .popup-content {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .popup-header {
+        padding-bottom: 15px;
+    }
+}
+</style>
+
+<script>
+// Popup functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const contactBtn = document.querySelector('.s-header__content .btn');
+    const popup = document.getElementById('contact-popup');
+    const closeBtn = document.querySelector('.close-btn');
+    const contactForm = document.getElementById('contact-form');
+    
+    // Open popup when "Get In Touch" is clicked
+    contactBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        popup.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    });
+    
+    // Close popup when X is clicked
+    closeBtn.addEventListener('click', function() {
+        popup.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close popup when clicking outside the form
+    popup.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            popup.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Form submission
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Here you would typically send the form data to your server
+        // For now, we'll just log it and close the popup
+        const formData = new FormData(contactForm);
+        const formValues = Object.fromEntries(formData.entries());
+        console.log('Form submitted:', formValues);
+        
+        // Show success message
+        alert('Merci pour votre message! Nous vous contacterons bientôt.');
+        
+        // Reset form and close popup
+        contactForm.reset();
+        popup.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+});
 </script>
 </body>
 
